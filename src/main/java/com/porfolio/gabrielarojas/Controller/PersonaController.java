@@ -42,7 +42,7 @@ public class PersonaController {
                               @RequestParam("facebook") String facebook,
                               @RequestParam("linkedin") String linkedin,
                               @RequestParam("twiter") String twiter,
-                              @RequestParam("instagram,") String instagram,
+                              @RequestParam("instagram") String instagram,
                               @RequestParam("acercade") String acercade,
                               @RequestParam("numero_whasap") String numero_whasap,
                               @RequestParam("fk_domicilio") long fk_domicilio){
