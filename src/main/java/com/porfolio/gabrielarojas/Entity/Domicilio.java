@@ -22,7 +22,7 @@ public class Domicilio {
     private String localidad;
     private String provincia;
     private String pais;
-    @OneToOne(mappedBy = "fk_domicilio")
+    @OneToOne(mappedBy = "domicilio")
     private Persona persona;
 
 

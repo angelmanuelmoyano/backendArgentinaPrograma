@@ -61,7 +61,7 @@ public class PersonaController {
         persona.setLogo_portada(logo_portada);
         persona.setNumero_whasap(numero_whasap);
         Domicilio domicilio= domicilioService.findDomicilio(fk_domicilio);
-        persona.setFk_domicilio(domicilio);
+        persona.setDomicilio(domicilio);
         personaService.savePersona(persona);
         return persona;
     }

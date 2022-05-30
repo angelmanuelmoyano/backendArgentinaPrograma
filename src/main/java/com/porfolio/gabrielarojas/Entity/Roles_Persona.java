@@ -19,11 +19,11 @@ public class Roles_Persona {
     private long id;
     @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="fk_persona")
-    private Persona fk_persona;
+    private Persona persona;
 
     @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="fk_rol")
-    private Roles fk_rol;
+    private Roles rol;
 
 
 

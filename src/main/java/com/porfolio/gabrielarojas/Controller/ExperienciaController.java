@@ -52,7 +52,7 @@ public class ExperienciaController {
         experiencia.setPuesto(puesto);
         experiencia.setTelefono(telefono);
         Persona persona =  personaService.findPersona(fk_persona);
-        experiencia.setFk_persona(persona);
+        experiencia.setPersona(persona);
         experienciaService.saveExperiencia(experiencia);
 
         return experiencia;

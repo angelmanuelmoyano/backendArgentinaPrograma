@@ -59,7 +59,7 @@ public class ProyectosController {
         proyecto.setLink(link);
         proyecto.setLink_repositorio(links_repositorio);
         Persona persona= personaService.findPersona(fk_persona);
-         proyecto.setFk_persona(persona);
+         proyecto.setPersona(persona);
          proyectosService.saveProyecto(proyecto);
         return proyecto;
     }

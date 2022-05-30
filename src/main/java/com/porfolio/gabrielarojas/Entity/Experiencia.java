@@ -26,6 +26,6 @@ public class Experiencia {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_persona", nullable = false)
-    private Persona fk_persona;
+    private Persona persona;
 
 }

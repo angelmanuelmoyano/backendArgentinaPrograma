@@ -48,22 +48,22 @@ public class Persona {
 
     @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="fk_domicilio")
-    private Domicilio fk_domicilio;
+    private Domicilio domicilio;
 
 
-    @OneToOne(mappedBy = "fk_persona")
+    @OneToOne(mappedBy = "persona")
     private Roles_Persona roles_persona;
 
-    @OneToMany(mappedBy = "fk_persona")
+    @OneToMany(mappedBy = "persona")
     private List<Educacion> educacion;
 
-    @OneToMany(mappedBy = "fk_persona")
+    @OneToMany(mappedBy = "persona")
     private List<Experiencia> experiencia;
 
-    @OneToMany(mappedBy = "fk_persona")
+    @OneToMany(mappedBy = "persona")
     private List<Habilidades> habilidades;
 
-    @OneToMany(mappedBy = "fk_persona")
+    @OneToMany(mappedBy = "persona")
     private List<Proyectos> proyectos;
 
 
