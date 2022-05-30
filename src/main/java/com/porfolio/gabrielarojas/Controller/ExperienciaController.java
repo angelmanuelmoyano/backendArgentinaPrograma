@@ -17,6 +17,7 @@ import java.util.List;
 public class ExperienciaController {
     @Autowired
     ExperienciaService experienciaService;
+    @Autowired
     PersonaService personaService;
     @GetMapping("/experiencia/traer")
     public List<Experiencia> getExperiencias(){

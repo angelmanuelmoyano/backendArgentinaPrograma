@@ -18,6 +18,7 @@ import java.util.List;
 public class ProyectosController {
     @Autowired
     ProyectosService proyectosService;
+    @Autowired
     PersonaService personaService;
 
     @GetMapping("/proyectos/traer")

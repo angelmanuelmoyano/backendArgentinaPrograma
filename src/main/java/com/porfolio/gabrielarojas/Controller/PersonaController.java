@@ -14,6 +14,7 @@ import java.util.List;
 public class PersonaController {
     @Autowired
     PersonaService personaService;
+    @Autowired
     DomicilioService domicilioService;
 
 
@@ -45,7 +46,7 @@ public class PersonaController {
                               @RequestParam("instagram") String instagram,
                               @RequestParam("acercade") String acercade,
                               @RequestParam("numero_whasap") String numero_whasap,
-                              @RequestParam("fk_domicilio") long fk_domicilio){
+                              @RequestParam("fk_domicilio") int fk_domicilio){
 
         Persona persona= personaService.findPersona(id);
         persona.setNombre(nombre);
@@ -60,7 +61,7 @@ public class PersonaController {
         persona.setLinkedin(linkedin);
         persona.setLogo_portada(logo_portada);
         persona.setNumero_whasap(numero_whasap);
-        Domicilio domicilio= domicilioService.findDomicilio(fk_domicilio);
+        Domicilio domicilio= domicilioService.findDomicilio((long) fk_domicilio);
         persona.setDomicilio(domicilio);
         personaService.savePersona(persona);
         return persona;

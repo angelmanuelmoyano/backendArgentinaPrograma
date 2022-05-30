@@ -16,7 +16,9 @@ import java.util.List;
 public class RolesPersonaController {
     @Autowired
     RolesPersonaService rolesPersonaService;
+    @Autowired
     RolesService rolesService;
+    @Autowired
     PersonaService personaService;
 
     @GetMapping("/rolespersonas/traer")

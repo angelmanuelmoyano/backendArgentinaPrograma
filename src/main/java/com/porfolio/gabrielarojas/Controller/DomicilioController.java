@@ -15,6 +15,7 @@ import java.util.List;
 public class DomicilioController {
     @Autowired
     DomicilioService domicilioService;
+    @Autowired
     PersonaService personaService;
 
     @GetMapping("/domicilio/traer")

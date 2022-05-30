@@ -15,6 +15,7 @@ import java.util.List;
 public class HabilidadesController {
     @Autowired
     HabilidadesService habilidadesService;
+    @Autowired
     PersonaService personaService;
 
     @GetMapping("/habilidades/traer")
