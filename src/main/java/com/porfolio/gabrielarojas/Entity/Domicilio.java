@@ -1,9 +1,6 @@
 package com.porfolio.gabrielarojas.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -12,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Domicilio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

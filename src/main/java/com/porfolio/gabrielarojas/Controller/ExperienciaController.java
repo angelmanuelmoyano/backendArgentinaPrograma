@@ -40,7 +40,7 @@ public class ExperienciaController {
                          @RequestParam("nombre_empresa") String nombre_empresa,
                          @RequestParam("puesto") String puesto,
                          @RequestParam("telefono") int telefono,
-                         @RequestParam("fk_persona") long fk_persona
+                         @RequestParam("fk_persona") int fk_persona
     ) throws ParseException {
 
         Experiencia experiencia= experienciaService.findExperiencia(id);
@@ -52,7 +52,7 @@ public class ExperienciaController {
         experiencia.setNombre_empresa(nombre_empresa);
         experiencia.setPuesto(puesto);
         experiencia.setTelefono(telefono);
-        Persona persona =  personaService.findPersona(fk_persona);
+        Persona persona =  personaService.findPersona((long) fk_persona);
         experiencia.setPersona(persona);
         experienciaService.saveExperiencia(experiencia);
 

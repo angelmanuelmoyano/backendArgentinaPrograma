@@ -1,9 +1,6 @@
 package com.porfolio.gabrielarojas.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -15,6 +12,7 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -66,8 +64,20 @@ public class Persona {
     @OneToMany(mappedBy = "persona")
     private List<Proyectos> proyectos;
 
-
-
-
-
+    /*public Persona(Long id, String nombre, String apellido, String imagen_portada, String logo_portada, String email, String password, String acercade, String facebook, String instagram, String linkedin, String twiter, String numero_whasap, Domicilio domicilio) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.imagen_portada = imagen_portada;
+        this.logo_portada = logo_portada;
+        this.email = email;
+        this.password = password;
+        this.acercade = acercade;
+        this.facebook = facebook;
+        this.instagram = instagram;
+        this.linkedin = linkedin;
+        this.twiter = twiter;
+        this.numero_whasap = numero_whasap;
+        this.domicilio = domicilio;
+    }*/
 }
