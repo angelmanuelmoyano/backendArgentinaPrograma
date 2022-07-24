@@ -49,19 +49,23 @@ public class Persona {
     private Domicilio domicilio;
 
 
-    @OneToOne(mappedBy = "persona")
-    private Roles_Persona roles_persona;
+    /*@OneToOne(mappedBy = "persona")
+    private Roles_Persona roles_persona;*/
 
-    @OneToMany(mappedBy = "persona")
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="fk_persona", nullable=false)
     private List<Educacion> educacion;
 
-    @OneToMany(mappedBy = "persona")
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="fk_persona", nullable=false)
     private List<Experiencia> experiencia;
 
-    @OneToMany(mappedBy = "persona")
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="fk_persona", nullable=false)
     private List<Habilidades> habilidades;
 
-    @OneToMany(mappedBy = "persona")
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="fk_persona", nullable=false)
     private List<Proyectos> proyectos;
 
     /*public Persona(Long id, String nombre, String apellido, String imagen_portada, String logo_portada, String email, String password, String acercade, String facebook, String instagram, String linkedin, String twiter, String numero_whasap, Domicilio domicilio) {

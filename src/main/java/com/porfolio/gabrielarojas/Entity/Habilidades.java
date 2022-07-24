@@ -17,8 +17,8 @@ public class Habilidades {
     private  String nombre_habilidad;
     private int porcentaje_adquirido;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+  /*  @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_persona", nullable = false)
-    private Persona persona;
+    private Persona persona;*/
 
 }

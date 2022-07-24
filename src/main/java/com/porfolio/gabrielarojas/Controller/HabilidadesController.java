@@ -41,8 +41,8 @@ public class HabilidadesController {
         Habilidades habilidad= habilidadesService.findHabilidad(id);
         habilidad.setNombre_habilidad(nombre_habilidad);
         habilidad.setPorcentaje_adquirido(porcentaje_adquirido);
-        Persona persona= personaService.findPersona(fk_persona);
-        habilidad.setPersona(persona);
+       /* Persona persona= personaService.findPersona(fk_persona);
+       habilidad.setPersona(persona);*/
         habilidadesService.saveHabilidad(habilidad);
         return habilidad;
     }

@@ -53,8 +53,8 @@ public class EducacionController {
                 educacion.setFecha_inicio(fechaInicio);
                 educacion.setLogo_institucion(logo_institucion);
                 educacion.setNombre_institucion(nombre_institucion);
-                Persona persona= personaService.findPersona(fk_persona);
-                educacion.setPersona(persona);
+               /* Persona persona= personaService.findPersona(fk_persona);
+                educacion.setPersona(persona);*/
                 educacionService.saveEducacion(educacion);
                 return educacion;
         }

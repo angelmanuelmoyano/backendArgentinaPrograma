@@ -20,8 +20,8 @@ public class Domicilio {
     private String localidad;
     private String provincia;
     private String pais;
-    @OneToOne(mappedBy = "domicilio")
-    private Persona persona;
+    //@OneToOne(mappedBy = "domicilio")
+    //private Persona persona;
 
 
 }

@@ -1,11 +1,12 @@
 package com.porfolio.gabrielarojas.Controller;
 
-import com.porfolio.gabrielarojas.Entity.Domicilio;
+import com.porfolio.gabrielarojas.Entity.*;
 import com.porfolio.gabrielarojas.Service.DomicilioService;
+import com.porfolio.gabrielarojas.Service.HabilidadesService;
 import com.porfolio.gabrielarojas.Service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.porfolio.gabrielarojas.Entity.Persona;
+
 
 import java.util.List;
 
@@ -16,6 +17,9 @@ public class PersonaController {
     PersonaService personaService;
     @Autowired
     DomicilioService domicilioService;
+
+    @Autowired
+    HabilidadesService habilidadesService;
 
 
     @GetMapping("/personas/traer")
@@ -62,9 +66,48 @@ public class PersonaController {
         persona.setLogo_portada(logo_portada);
         persona.setNumero_whasap(numero_whasap);
         Domicilio domicilio= domicilioService.findDomicilio((long) fk_domicilio);
+        //Habilidades habilidades= habilidadesService.
         persona.setDomicilio(domicilio);
+
         personaService.savePersona(persona);
+
+
         return persona;
+    }
+
+    @PutMapping("/personas/editar_persona/{id}")
+    public Persona editPersona_hab(@PathVariable Long id,
+                                   @RequestBody  Persona persona){
+                                  // @RequestBody  Habilidades habilidad){
+
+        Persona persona2= personaService.findPersona(id);
+        persona2.setNombre(persona.getNombre());
+        persona2.setApellido(persona.getApellido());
+        persona2.setImagen_portada(persona.getImagen_portada());
+        persona2.setAcercade(persona.getAcercade());
+        persona2.setEmail(persona.getEmail());
+        persona2.setPassword(persona.getPassword());
+        persona2.setFacebook(persona.getFacebook());
+        persona2.setInstagram(persona.getInstagram());
+        persona2.setTwiter(persona.getTwiter());
+        persona2.setLinkedin(persona.getLinkedin());
+        persona2.setLogo_portada(persona.getImagen_portada());
+        persona2.setNumero_whasap(persona.getNumero_whasap());
+        Domicilio domicilio= domicilioService.findDomicilio((long) persona.getDomicilio().getId());
+        domicilio.setNombre_calle(persona.getDomicilio().getNombre_calle());
+        List<Habilidades> habilidades= persona.getHabilidades();
+        List<Experiencia> experiencias = persona.getExperiencia();
+        List<Educacion> educacion = persona.getEducacion();
+        List<Proyectos> proyectos= persona.getProyectos();
+        persona2.setHabilidades(habilidades);
+        persona2.setExperiencia(experiencias);
+        persona2.setProyectos(proyectos);
+        persona2.setEducacion(educacion);
+
+        personaService.savePersona(persona2);
+
+
+        return persona2;
     }
 
 }

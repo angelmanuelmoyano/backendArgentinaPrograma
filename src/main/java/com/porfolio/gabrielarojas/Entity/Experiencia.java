@@ -22,8 +22,8 @@ public class Experiencia {
     private Date fecha_fin;
     private int telefono;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+   /* @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_persona", nullable = false)
-    private Persona persona;
+    private Persona persona;*/
 
 }

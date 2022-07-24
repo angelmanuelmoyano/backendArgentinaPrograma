@@ -59,8 +59,8 @@ public class ProyectosController {
         proyecto.setImagen_3(imagen_3);
         proyecto.setLink(link);
         proyecto.setLink_repositorio(links_repositorio);
-        Persona persona= personaService.findPersona(fk_persona);
-         proyecto.setPersona(persona);
+      /*  Persona persona= personaService.findPersona(fk_persona);
+         proyecto.setPersona(persona);*/
          proyectosService.saveProyecto(proyecto);
         return proyecto;
     }

@@ -52,8 +52,8 @@ public class ExperienciaController {
         experiencia.setNombre_empresa(nombre_empresa);
         experiencia.setPuesto(puesto);
         experiencia.setTelefono(telefono);
-        Persona persona =  personaService.findPersona((long) fk_persona);
-        experiencia.setPersona(persona);
+       /* Persona persona =  personaService.findPersona((long) fk_persona);
+        experiencia.setPersona(persona);*/
         experienciaService.saveExperiencia(experiencia);
 
         return experiencia;

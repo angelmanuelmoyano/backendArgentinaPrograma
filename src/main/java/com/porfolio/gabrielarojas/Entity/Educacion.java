@@ -22,7 +22,7 @@ public class Educacion {
     private Date fecha_fin;
     private String logo_institucion;
     private String titulo;
-    @ManyToOne(fetch = FetchType.EAGER)
+   /* @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_persona", nullable = false)
-    private Persona persona;
+    private Persona persona;*/
 }

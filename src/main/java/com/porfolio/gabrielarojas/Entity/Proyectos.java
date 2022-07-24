@@ -24,9 +24,9 @@ public class Proyectos {
     private String imagen_2;
     private String imagen_3;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+   /* @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_persona", nullable = false)
-    private Persona persona;
+    private Persona persona;*/
 
 
 }
