@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PersonaService implements IPersonaService {
@@ -32,6 +33,14 @@ public class PersonaService implements IPersonaService {
     public Persona findPersona(Long id) {
         Persona persona = ipersonarepository.findById(id).orElse(null);
 
+        return persona;
+    }
+    public Optional<Persona> getUserByEmail(String email){
+        return ipersonarepository.findByEmail(email);
+
+    }
+    public Persona loadUser(String usuario){
+        Persona persona = getUserByEmail(usuario).get();
         return persona;
     }
 }
