@@ -119,16 +119,19 @@ public class PersonaController {
     }
 
     @PostMapping("/personas/login")
-    //@PostMapping("user")
-    public Persona login(@RequestParam("email") String email, @RequestParam("password") String password) {
+    public String login(@RequestParam("email") String email, @RequestParam("password") String password) throws Exception {
+        try {
+            String token = getJWTToken(email);
+            Persona persona = personaService.validarEmailPassword(email, password);
 
-        String token = getJWTToken(email);
-        Persona persona = new Persona();
-        persona.setEmail(email);
-         persona.setToken(token);
 
-        return persona;
+            return token;
+        } catch (Exception e) {
+            String error="Error: usuario o password incorrecto";
+            return error;
 
+
+        }
     }
 
     private String getJWTToken(String username) {
