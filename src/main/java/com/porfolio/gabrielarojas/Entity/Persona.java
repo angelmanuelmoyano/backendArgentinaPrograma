@@ -44,6 +44,8 @@ public class Persona {
 
     private String numero_whasap;
 
+    private String  token;
+
     @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="fk_domicilio")
     private Domicilio domicilio;

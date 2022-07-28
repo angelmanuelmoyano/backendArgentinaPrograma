@@ -1,6 +1,6 @@
 package com.porfolio.gabrielarojas.Security;
 
-import com.porfolio.gabrielarojas.Entity.Persona;
+/*import com.porfolio.gabrielarojas.Entity.Persona;
 import io.jsonwebtoken.*;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.slf4j.Logger;
@@ -53,4 +53,4 @@ public class JwtProvider {
 
     }
 
-}
+}*/
